@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BurakBuyuktumturkOdev1.KrediFaiz"
+             Title="KrediFaiz">
+    <VerticalStackLayout>
+        <Label Text=" Kredi Faiz Hesaplama Uygulaması "  HeightRequest="50" WidthRequest="300"  Margin="15,15,15,15" VerticalOptions="Center"/>
+        <Label Text=" Numaraya Göre Kredi Türünü Belirleyiniz" Margin="20,20,20,20" />
+        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto">
+
+
+            <Label Text=" 1-İhtiyaç Kredisi" WidthRequest="180"  Grid.Row="0" Grid.Column="0" Margin="10,10,10,10"  />
+            <Label Text=" 4- Taşıt Kredisi" WidthRequest="180" Grid.Row="0" Grid.Column="1" Margin="10,10,10,10" />
+            <Label Text=" 3-Ticari" WidthRequest="180"  Grid.Row="1" Grid.Column="0" Margin="10,10,10,10"  />
+            <Label Text=" 2-Konut Kredisi" WidthRequest="180" Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" />
+
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions=" Auto,Auto" Margin="20,20,20,20">
+
+            <Label Text=" Kredi Tutarı : " Grid.Row="0" Grid.Column="0 "/>
+            <Label Text="{Binding Source={x:Reference KrediTutarı},Path=Value,StringFormat='{0:F0} TL'}" Grid.Row="0" Grid.Column="1"/>
+            <Label Text=" Faiz Oranı: " Grid.Row="1" Grid.Column="0" />
+            <Label Text="{Binding Source={x:Reference Faiz},Path=Value,StringFormat='{0:F0} oranında'}" Grid.Row="1" Grid.Column="1" />
+            <Label Text=" Süre = " Grid.Column="0" Grid.Row="2" Margin="10,10,10,10" />
+            <Label Text="{Binding Source={x:Reference Süre},Path=Value,StringFormat='{0:F0} ay'}" Grid.Row="2" Grid.Column="1" Margin="10,10,10,10"/>
+            <Stepper x:Name="Stepper" Maximum="4" Minimum="1" Grid.Row="3" Grid.Column="0" Value="{Binding Durum}"/>
+            <Label Text="{Binding Source={x:Reference Stepper},Path=Value,StringFormat='{0:F0} nolu kredi durumu'}" Grid.Row="3" Grid.Column="1" Margin="10,10,10,10" />
+
+        </Grid>
+
+        <Label Text=" Vade Sürgüsü"/>
+        <Slider x:Name="Süre" Minimum="3" Maximum=" 300" Grid.Row="3" Grid.Column="0" Value="{Binding Vade}" Margin="20,20,20,20" ThumbColor="Aqua" MaximumTrackColor="Blue"/>
+        <Label Text="Faiz Sürgüsü" Margin="10,10,10,10"/>
+        <Slider x:Name="Faiz"    Minimum="1" Maximum="50" Value="{Binding FaizOranı}" Margin="20,20,20,20" ThumbColor="Aquamarine" MinimumTrackColor="Blue" />
+        <Label Text="Ana Para Sürgüsü" Margin="10,10,10,10" />
+        <Slider x:Name="KrediTutarı" Minimum="100" Maximum="100000" Value="{Binding AnaPara}" Margin="20,20,20,20" ThumbColor="CadetBlue" MaximumTrackColor="Blue"  />
+
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
+
+
+
+            <Label Text=" Toplam Geri Ödeme" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" />
+            <Label Text="{Binding Sonuc}"  Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

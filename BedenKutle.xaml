@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BurakBuyuktumturkOdev1.BedenKutle"
+             Title="BedenKutle">
+    <VerticalStackLayout>
+        <Label   Text="BEDEN KÜTLE ENDEKSİ HESAPLAYICI " FontSize="20" TextColor="White"  HeightRequest="70"/>
+        <Label Text=" Boy Değeri : " Margin="20,20,20,20 " BackgroundColor="AntiqueWhite" HeightRequest="40" WidthRequest="250" Scale="1.5" />
+        <Entry   Text="{Binding Source= {x:Reference sliderboy},Path=Value,StringFormat='{0:F0} cm '}" 
+         Margin="0,0,0,0" PlaceholderColor="BlueViolet" BackgroundColor="AntiqueWhite" HeightRequest="50" WidthRequest="250" Scale="1.5"/>
+        <Slider x:Name="sliderboy" Minimum="25"   Maximum="213" BackgroundColor="AntiqueWhite" Margin="20,20,20,20" MaximumTrackColor="Green" 
+         Scale="1.5" HeightRequest="50" WidthRequest="250" ThumbColor="Blue" 
+         MinimumTrackColor="BurlyWood" Value="{Binding Boy}"/>
+        <Label Text=" Kilo Değeri :" VerticalOptions="Center" HeightRequest="50" WidthRequest="250" BackgroundColor="AntiqueWhite"  Scale="1.5"/>
+        <Entry     Text="{Binding Source={ x:Reference sliderkilo },Path=Value ,StringFormat='{0:F0} kg'}" 
+         Margin="20,20,20,20" HeightRequest="50" WidthRequest="250" Scale="1.5" BackgroundColor="AntiqueWhite"  VerticalOptions="Center"  />
+        <Slider  x:Name="sliderkilo"  Grid.Row="3" Grid.Column="1"  Margin="0,0,0,0" HeightRequest="50" WidthRequest="250" Scale="1.5"
+         BackgroundColor="AntiqueWhite" Maximum="200" 
+         Minimum="10" Value="{Binding Kilo}"/>
+
+
+        <Label Text=" Beden Kitle Endeksi Değeri :  " Margin="0,0,0,0" HeightRequest="30" WidthRequest="250" BackgroundColor="AntiqueWhite" Scale="1.5"/>
+        <Label Text="{Binding BKE }" BackgroundColor="AntiqueWhite"   FontSize="19" WidthRequest="300" Scale="1.25"  Margin="0,0,0,0"/>
+        <Label Text="{Binding  BedenGrubu}" BackgroundColor="AntiqueWhite" FontSize="19" WidthRequest="300" Scale="1.25" Margin="0,0,0,0"/>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

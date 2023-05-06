@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BurakBuyuktumturkOdev1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BurakBuyuktumturkOdev1"
+    Shell.FlyoutBehavior="Flyout">
+
+    
+        <ShellContent
+          Icon="homeikon.png"   
+        Title="Ana Sayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent  
+        Icon="tartiikon.png"
+        Title="BedenKutle" 
+        ContentTemplate="{DataTemplate local:BedenKutle}"
+        Route="BedenKutle"/>
+    <ShellContent
+        Icon="krediikon.png"
+        Title="KrediFaiz"
+        ContentTemplate="{DataTemplate local:KrediFaiz}"
+        Route="KrediFaiz" />
+    <ShellContent 
+        Icon="renkpaletiikon.png"
+        Title="RenkPaleti"
+        ContentTemplate="{DataTemplate local:RenkPaleti}"
+        Route="RenkPaleti"/>
+    <ShellContent 
+        Icon="todoikon.png"
+        Title="Yapılacaklar"
+        ContentTemplate="{DataTemplate local:Yapılacaklar}"
+        Route=" Yapılacaklar"/>
+    
+
+</Shell>
